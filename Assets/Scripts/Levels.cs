@@ -110,6 +110,18 @@ public static class Levels
                 },
             },
         },
+        new Level {
+             Rows = new ObstacleRow[]{
+                new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
+                         ObstacleCode.Flamer,
+                        ObstacleCode.Nothing,
+                         ObstacleCode.Flamer,
+                         ObstacleCode.Nothing,
+                    },
+                },
+            },
+        },
     };
 
     public static Level GetLevel()
