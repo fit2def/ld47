@@ -16,9 +16,9 @@ public class Obstacle : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.name == "HamsterCollider")
+        if (other.gameObject.name == "HamsterCollider")
         {
             Hamster hamster = FindObjectOfType<Hamster>();
             hamster.Splat();

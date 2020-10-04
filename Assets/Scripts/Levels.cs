@@ -19,29 +19,73 @@ public static class Levels
                 new ObstacleRow {
                     Obstacles = new ObstacleCode[] {
                         ObstacleCode.Carrot,
-                        ObstacleCode.Flamer,
-                        ObstacleCode.Carrot,
-                        ObstacleCode.Carrot
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
                     },
                 },
                 new ObstacleRow {
                     Obstacles = new ObstacleCode[] {
                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                    },
+                },
+                new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
                         ObstacleCode.Carrot,
-                        ObstacleCode.Carrot,
-                        ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                         ObstacleCode.Carrot,
+                    },
+                },
+                new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.Pipe,
+                        ObstacleCode.BrickWall
+                    },
+                },
+                new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
+                        ObstacleCode.Pipe,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
                     },
                     IsParent = true,
                     OffsetChild = true
                 },
-                new ObstacleRow {
+                 new ObstacleRow {
                     Obstacles = new ObstacleCode[] {
-                        ObstacleCode.Carrot,
-                        ObstacleCode.Carrot,
-                        ObstacleCode.Carrot,
-                        ObstacleCode.Carrot,
+                        ObstacleCode.Pipe,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
                     },
-                }
+                    IsParent = true,
+                    OffsetChild = true
+                },
+                 new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
+                        ObstacleCode.FastButton,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                    },
+                    IsParent = true,
+                    OffsetChild = true
+                },
+                 new ObstacleRow {
+                    Obstacles = new ObstacleCode[] {
+                        ObstacleCode.Pipe,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                        ObstacleCode.BrickWall,
+                    },
+                },
             },
         },
         new Level {
