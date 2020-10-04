@@ -107,7 +107,6 @@ public static class Levels
                          ObstacleCode.Carrot,
                          ObstacleCode.Carrot,
                     },
-                    IsParent = true,
                 },
             },
         },
@@ -132,7 +131,10 @@ public static class Levels
 
     public static void StartLevel(int index)
     {
-        currentLevelIndex = index;
-        SceneManager.LoadScene("WheelScene");
+        if (index < levels.Length)
+        {
+            currentLevelIndex = index;
+            SceneManager.LoadScene("WheelScene");
+        }
     }
 }
