@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class RowStamper : MonoBehaviour
 {
-    [SerializeField] float delay = 5f;
-    [SerializeField] float spacing = 1f;
+    [Tooltip("The time before the first row is stamped at the top of the wheel")]
+    [SerializeField] float delay = 0f;
+
+    [Tooltip("The time (in seconds) between each row.")]
+    [SerializeField] float spacing = 2f;
     private Wheel wheel;
     int generationCount;
     private Level level;

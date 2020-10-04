@@ -2,14 +2,18 @@
 
 public class Hamster : MonoBehaviour
 {
-    [SerializeField] float horizontalSpeed = 5f;
+    [Header("Movement")]
+
+    [Tooltip("How far the hamster can travel laterally in either direction. This should probably stay put as its hardcoded based on the current wheel size")]
+    [SerializeField] float xAllowance = 9;
+    [SerializeField] float horizontalSpeed = 7.5f;
+
+    [Header("Sound")]
     [SerializeField] AudioClip carrotSound;
     [SerializeField] AudioClip jumpSound;
 
     [SerializeField] AudioClip scorchedSound;
     [SerializeField] AudioClip splatSound;
-
-    private float xAllowance = 9;
 
     private Animator animator;
     private AudioSource sound;
