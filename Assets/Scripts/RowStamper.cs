@@ -32,7 +32,6 @@ public class RowStamper : MonoBehaviour
         bool offset = rowIndex > 0 && level.Rows[rowIndex - 1].OffsetChild;
         Stamp(level.Rows[rowIndex], offset);
 
-        print(rowIndex);
         if (level.Rows[rowIndex++].IsParent)
         {
             generationCount++;
