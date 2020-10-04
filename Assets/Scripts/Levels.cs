@@ -129,4 +129,10 @@ public static class Levels
         currentLevelIndex = 1;
         SceneManager.LoadScene("WheelScene");
     }
+
+    public static void StartLevel(int index)
+    {
+        currentLevelIndex = index;
+        SceneManager.LoadScene("WheelScene");
+    }
 }

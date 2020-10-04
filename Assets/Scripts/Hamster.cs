@@ -36,14 +36,15 @@ public class Hamster : MonoBehaviour
     void Update()
     {
         if (!waitingForNextLevel) ProcessInput();
+
+        DebugLevelSelect();
     }
 
     void ProcessInput()
     {
         if (Input.GetKeyDown(KeyCode.Space)) Jump();
-        if (Input.GetKey(KeyCode.D)) MoveRight();
-        if (Input.GetKey(KeyCode.A)) MoveLeft();
-
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) MoveRight();
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) MoveLeft();
     }
 
     void Jump()
@@ -73,6 +74,17 @@ public class Hamster : MonoBehaviour
         x = proposedXPos < -xAllowance ? x - (-xAllowance - proposedXPos) : x;
 
         transform.Translate(Vector3.left * x);
+    }
+
+    void DebugLevelSelect()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            if (Input.GetKeyDown($"[{i}]"))
+            {
+                Levels.StartLevel(i);
+            }
+        }
     }
 
     public void GetCarrot()
