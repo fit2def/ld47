@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RowStamper : MonoBehaviour
@@ -14,15 +16,14 @@ public class RowStamper : MonoBehaviour
         wheel = FindObjectOfType<Wheel>();
         level = Levels.GetLevel();
 
-        for (int i = 0; i < level.Rows.Length; i++)
+        IEnumerable<ObstacleRow> scheduledRows =
+            level.Rows.Where((row, i) => i == 0 || !level.Rows[i - 1].IsParent);
+
+        for (int i = 0; i < scheduledRows.Count(); i++)
         {
-            // if the row has no parent, schedule it.
-            if (i == 0 || !level.Rows[i - 1].IsParent)
-            {
-                generationCount = 0;
-                float invokeAfterSeconds = i * spacing + delay;
-                Invoke("StampHierarchy", invokeAfterSeconds);
-            }
+            generationCount = 0;
+            float invokeAfterSeconds = i * spacing + delay;
+            Invoke("StampHierarchy", invokeAfterSeconds);
         }
     }
 
