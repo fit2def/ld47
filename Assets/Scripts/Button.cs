@@ -20,7 +20,6 @@ public class Button : MonoBehaviour
         animator = GetComponent<Animator>();
         sound = GetComponent<AudioSource>();
         wheel = FindObjectOfType<Wheel>();
-        defaultWheelSpeed = wheel.speed;
     }
 
 
@@ -39,13 +38,14 @@ public class Button : MonoBehaviour
 
     void ChangeWheelSpeed()
     {
-        wheel.ChangeSpeed(id, defaultWheelSpeed * speedMultiplier);
+        print(id);
+        wheel.ChangeSpeed(id, speedMultiplier);
         Invoke("ResetWheelSpeed", effectDuration);
     }
 
     void ResetWheelSpeed()
     {
-        if (wheel.currentButtonId == id)
+        if (wheel.speed > 0 && wheel.currentButtonId == id)
         {
             wheel.ResetSpeed();
         }

@@ -15,6 +15,8 @@ public class Hamster : MonoBehaviour
     [SerializeField] AudioClip scorchedSound;
     [SerializeField] AudioClip splatSound;
 
+    [SerializeField] BoxCollider collider;
+
     private Animator animator;
     private AudioSource sound;
 
@@ -28,6 +30,7 @@ public class Hamster : MonoBehaviour
 
     public Animator[] carrotControllers;
 
+    private bool cantDie = false;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -99,7 +102,7 @@ public class Hamster : MonoBehaviour
 
         if (carrots == 5)
         {
-            //todo - play fanfare sound
+            cantDie = true;
             Pause();
             Invoke("LoadNextScene", 3f);
         }
@@ -118,6 +121,7 @@ public class Hamster : MonoBehaviour
             // todo - blood splat + sound
             SkinnedMeshRenderer mesh = GetComponentInChildren<SkinnedMeshRenderer>();
             mesh.enabled = false;
+            collider.enabled = false;
             sound.PlayOneShot(splatSound);
             splatter.Play();
             Invoke("Die", 3f);
@@ -141,7 +145,10 @@ public class Hamster : MonoBehaviour
 
     private void Die()
     {
-        Levels.Restart();
+        if (!cantDie)
+        {
+            Levels.Restart();
+        }
     }
 
     private void Pause()
@@ -154,7 +161,6 @@ public class Hamster : MonoBehaviour
 
     private void StopWheel()
     {
-
         wheel.speed = 0f;
     }
 }

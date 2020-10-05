@@ -353,7 +353,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -460,7 +460,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.5398565, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -844,7 +844,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -897,14 +897,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 2
+    type: 0
     angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 1, z: 0}
-    m_Rotation: {x: -90, y: 0, z: 0}
+    m_Position: {x: 0, y: 1, z: -1.47}
+    m_Rotation: {x: -110, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1533,7 +1533,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1541,16 +1541,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.9339623, g: 0.80988026, b: 0.6167675, a: 1}
-        key1: {r: 0.8867924, g: 0.45819682, b: 0.058561746, a: 1}
+        key0: {r: 1, g: 0.96501166, b: 0.9528302, a: 1}
+        key1: {r: 1, g: 0.48713413, b: 0, a: 1}
         key2: {r: 0.23584908, g: 0.097899616, b: 0.097899616, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 65535
+        ctime0: 578
+        ctime1: 39899
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -3848,7 +3848,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -3865,7 +3865,7 @@ ParticleSystem:
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5315,7 +5315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 649, y: 341.5}
+  m_AnchoredPosition: {x: 603, y: 362}
   m_SizeDelta: {x: 622.4496, y: 197.65714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754654384
@@ -5363,9 +5363,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '4 - LOOKIN'' 4 FUN
-
-    + FEELIN'' GROOVY'
+  m_Text: 6 - TUNNEL TOO FAR
 --- !u!222 &754654386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5666,6 +5664,10 @@ PrefabInstance:
       propertyPath: horizontalSpeed
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 863736392, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1613711539}
     - target: {fileID: 1318548562, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -5676,15 +5678,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1318548564, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_Size.x
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1318548564, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_Size.y
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1318548564, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_Size.z
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318548564, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
+      propertyPath: m_Center.z
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1568726713, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_audioClip
@@ -5704,7 +5710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 549077331300700197, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40
+      value: -39.84
       objectReference: {fileID: 0}
     - target: {fileID: 549077331300700197, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6130,13 +6136,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530070277}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 766295745}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!108 &1530070279
 Light:
   m_ObjectHideFlags: 0
@@ -6149,13 +6155,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -6298,6 +6304,11 @@ PrefabInstance:
 --- !u!1 &1613711537 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1318548562, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
+  m_PrefabInstance: {fileID: 1212037053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1613711539 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1318548564, guid: 468bef2a40df0b4bfa7de3993d20ac11, type: 3}
   m_PrefabInstance: {fileID: 1212037053}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1613711542

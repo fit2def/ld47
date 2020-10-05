@@ -19,11 +19,11 @@ public class Carrot : MonoBehaviour
     {
         transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed);
 
-        // transform.localPosition = new Vector3(
-        //     transform.localPosition.x,
-        //     y + .5f * Mathf.Sin(Time.time * bobbingSpeed),
-        //     transform.localPosition.z
-        // );
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            y + .25f * Mathf.Sin(Time.time * bobbingSpeed),
+            transform.localPosition.z
+        );
     }
 
     void OnTriggerEnter(Collider other)

@@ -28,4 +28,19 @@ public class ObstacleRow
 
         return row;
     }
+
+    public static ObstacleRow PipeRow(bool offsetNext)
+    {
+        return new ObstacleRow
+        {
+            Obstacles = new ObstacleCode[]{
+                ObstacleCode.Pipe,
+                ObstacleCode.Pipe,
+                ObstacleCode.Pipe,
+                ObstacleCode.Pipe,
+            },
+            IsParent = true,
+            OffsetChild = offsetNext
+        };
+    }
 }

@@ -25,7 +25,6 @@ public class RowStamper : MonoBehaviour
 
         for (int i = 0; i < scheduledRows.Count(); i++)
         {
-            generationCount = 0;
             float speedModifier = 1 / (wheel.speed / startingSpeed);
             float invokeAfterSeconds = i * spacing * speedModifier + delay;
             Invoke("StampHierarchy", invokeAfterSeconds);
@@ -35,12 +34,17 @@ public class RowStamper : MonoBehaviour
     private void StampHierarchy()
     {
         bool offset = rowIndex > 0 && level.Rows[rowIndex - 1].OffsetChild;
+
         Stamp(level.Rows[rowIndex], offset);
 
         if (level.Rows[rowIndex++].IsParent)
         {
             generationCount++;
             StampHierarchy();
+        }
+        else
+        {
+            generationCount = 0;
         }
     }
 

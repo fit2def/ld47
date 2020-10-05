@@ -18,11 +18,11 @@ public class Wheel : MonoBehaviour
         transform.Rotate(Vector3.right * speed * Time.deltaTime);
     }
 
-    public void ChangeSpeed(Guid buttonId, float speed)
+    public void ChangeSpeed(Guid buttonId, float multiplier)
     {
         currentButtonId = buttonId;
 
-        this.speed = speed;
+        this.speed = savedSpeed * multiplier;
     }
 
     public void ResetSpeed()
