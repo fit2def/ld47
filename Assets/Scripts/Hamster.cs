@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Hamster : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Hamster : MonoBehaviour
     [SerializeField] AudioClip scorchedSound;
     [SerializeField] AudioClip splatSound;
 
-    [SerializeField] BoxCollider collider;
+    [SerializeField] new BoxCollider collider;
+
 
     private Animator animator;
     private AudioSource sound;
@@ -31,8 +33,13 @@ public class Hamster : MonoBehaviour
     public Animator[] carrotControllers;
 
     private bool cantDie = false;
+
+    private int carrotJumpIndex;
+
+    Animator fade;
     void Start()
     {
+        fade = FindObjectOfType<FadePanel>().GetComponent<Animator>();
         animator = GetComponent<Animator>();
         sound = GetComponent<AudioSource>();
         wheel = FindObjectOfType<Wheel>();
@@ -89,7 +96,7 @@ public class Hamster : MonoBehaviour
         {
             if (Input.GetKeyDown($"[{i}]"))
             {
-                Levels.StartLevel(i);
+                Levels.StartLevel(i - 1);
             }
         }
     }
@@ -105,12 +112,26 @@ public class Hamster : MonoBehaviour
             cantDie = true;
             Pause();
             Invoke("LoadNextScene", 3f);
+            PlayCarrotJump();
+        }
+    }
+
+
+    void PlayCarrotJump()
+    {
+        carrotControllers[carrotJumpIndex].Play("JumpCarrot");
+
+        if (carrotJumpIndex < carrotControllers.Length - 1)
+        {
+            carrotJumpIndex++;
+            Invoke("PlayCarrotJump", .2f);
         }
     }
 
     private void LoadNextScene()
     {
-        Levels.Next();
+        Levels.loadNext = true;
+        fade.Play("FadeOut");
     }
 
     public void Splat()
@@ -124,7 +145,7 @@ public class Hamster : MonoBehaviour
             collider.enabled = false;
             sound.PlayOneShot(splatSound);
             splatter.Play();
-            Invoke("Die", 3f);
+            Invoke("Die", 2f);
         }
 
     }
@@ -138,24 +159,21 @@ public class Hamster : MonoBehaviour
             Material charred = Resources.Load("Materials/Flamer") as Material;
             mesh.material = charred;
             Pause();
-            Invoke("Die", 3f);
+
+            Invoke("Die", 2f);
         }
 
     }
 
     private void Die()
     {
-        if (!cantDie)
-        {
-            Levels.Restart();
-        }
+        if (!cantDie) fade.Play("FadeOut");
     }
 
     private void Pause()
     {
         animator.SetBool("noAnims", true);
         waitingForNextLevel = true;
-
         Invoke("StopWheel", .25f);
     }
 

@@ -4,26 +4,8 @@ ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: 5396098060687391206
-    second: Pipe|Cube.005Action
-  - first:
-      74: -5793032162158943927
-    second: Pipe|Cube.005Action.001
-  - first:
-      74: 5681271516965886385
-    second: Pipe|PipeAction
-  - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
-      74: -3653244689128496862
-    second: Armature|Cube.005Action
-  - first:
-      74: -317224928337833705
-    second: Armature|Cube.005Action.001
-  - first:
-      74: -8151737968416260502
-    second: Armature|PipeAction
+      74: -1422011007694221501
+    second: Armature|ArmatureAction.001
   externalObjects: {}
   materials:
     materialImportMode: 1

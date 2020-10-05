@@ -38,7 +38,6 @@ public class Button : MonoBehaviour
 
     void ChangeWheelSpeed()
     {
-        print(id);
         wheel.ChangeSpeed(id, speedMultiplier);
         Invoke("ResetWheelSpeed", effectDuration);
     }

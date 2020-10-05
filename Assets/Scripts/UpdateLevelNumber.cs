@@ -15,6 +15,6 @@ public class UpdateLevelNumber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = $"{Levels.currentLevelIndex} - {Levels.GetLevel().Name.ToUpper()}";
+        text.text = $"{Levels.currentLevelIndex + 1} - {Levels.GetLevel().Name.ToUpper()}";
     }
 }

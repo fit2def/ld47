@@ -14,7 +14,13 @@ public class RowStamper : MonoBehaviour
     int generationCount;
     private Level level;
     private int rowIndex;
+
     void Start()
+    {
+        if (!Levels.gameJustStarted) Init();
+    }
+
+    public void Init()
     {
         wheel = FindObjectOfType<Wheel>();
         float startingSpeed = wheel.speed;
@@ -37,9 +43,14 @@ public class RowStamper : MonoBehaviour
 
         Stamp(level.Rows[rowIndex], offset);
 
-        if (level.Rows[rowIndex++].IsParent)
+        var thisRow = level.Rows[rowIndex++];
+
+        if (thisRow.IsParent)
         {
-            generationCount++;
+            if (offset)
+            {
+                generationCount++;
+            }
             StampHierarchy();
         }
         else
@@ -67,14 +78,15 @@ public class RowStamper : MonoBehaviour
             Vector3 pos = obstacle.transform.position;
             pos.x = GetObstacleXPosition(i);
 
-            if (offset)
-            {
-                float rotationDegrees = -generationCount / Constants.WHEEL_RADIUS * 90f; //check
-                float t = -rotationDegrees * (float)Math.PI / 180f;
-                pos.y = Constants.WHEEL_RADIUS * Mathf.Cos(t);
-                pos.z = -Constants.WHEEL_RADIUS * Mathf.Sin(t);
-                obstacle.transform.Rotate(rotationDegrees, 0, 0);
-            }
+            //bool useCurrentGeneration = offset || rowIndex == 0 || !level.Rows[rowIndex - 1].IsParent;
+            //int generation = useCurrentGeneration ? generationCount : generationCount - 1;
+
+            float rotationDegrees = -generationCount / Constants.WHEEL_RADIUS * 90f;
+            float t = -rotationDegrees * (float)Math.PI / 180f;
+            pos.y = Constants.WHEEL_RADIUS * Mathf.Cos(t);
+            pos.z = -Constants.WHEEL_RADIUS * Mathf.Sin(t);
+            obstacle.transform.Rotate(rotationDegrees, 0, 0);
+
 
             obstacle.transform.position = pos;
         }
