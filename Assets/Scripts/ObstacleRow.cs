@@ -1,5 +1,6 @@
 public class ObstacleRow
 {
+
     public ObstacleCode[] Obstacles { get; set; }
 
     public bool IsParent { get; set; }
@@ -17,5 +18,14 @@ public class ObstacleRow
                 ObstacleCode.Nothing,
             },
         };
+    }
+
+    public static ObstacleRow Spacer()
+    {
+        ObstacleRow row = Empty();
+        row.IsParent = true;
+        row.OffsetChild = true;
+
+        return row;
     }
 }

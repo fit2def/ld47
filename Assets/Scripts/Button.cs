@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Button : MonoBehaviour
@@ -12,9 +11,12 @@ public class Button : MonoBehaviour
     Wheel wheel;
     float defaultWheelSpeed;
 
+    public Guid id;
+
     bool pressed;
     void Start()
     {
+        id = Guid.NewGuid();
         animator = GetComponent<Animator>();
         sound = GetComponent<AudioSource>();
         wheel = FindObjectOfType<Wheel>();
@@ -37,14 +39,13 @@ public class Button : MonoBehaviour
 
     void ChangeWheelSpeed()
     {
-        wheel.ChangeSpeed(defaultWheelSpeed * speedMultiplier);
-        wheel.speed = defaultWheelSpeed * speedMultiplier;
+        wheel.ChangeSpeed(id, defaultWheelSpeed * speedMultiplier);
         Invoke("ResetWheelSpeed", effectDuration);
     }
 
     void ResetWheelSpeed()
     {
-        if (wheel.speed == defaultWheelSpeed * speedMultiplier)
+        if (wheel.currentButtonId == id)
         {
             wheel.ResetSpeed();
         }

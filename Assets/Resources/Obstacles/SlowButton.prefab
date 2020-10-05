@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc92359dfad0f56ae844e415d4d387a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectDuration: 10
+  effectDuration: 4
   speedMultiplier: 0.5
 --- !u!82 &7436045107521466164
 AudioSource:

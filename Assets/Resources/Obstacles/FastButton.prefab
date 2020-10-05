@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2608397132977189518}
   - component: {fileID: -8288173523805681257}
   - component: {fileID: 7436045107521466164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FastButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc92359dfad0f56ae844e415d4d387a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectDuration: 10
+  effectDuration: 4
   speedMultiplier: 2
 --- !u!82 &7436045107521466164
 AudioSource:
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101362417782908168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6048279222211734255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6526585934777628225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4992975001478656986}
   - component: {fileID: 450569001125290163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8325958524092500355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

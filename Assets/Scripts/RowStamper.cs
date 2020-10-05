@@ -17,6 +17,7 @@ public class RowStamper : MonoBehaviour
     void Start()
     {
         wheel = FindObjectOfType<Wheel>();
+        float startingSpeed = wheel.speed;
         level = Levels.GetLevel();
 
         IEnumerable<ObstacleRow> scheduledRows =
@@ -25,7 +26,8 @@ public class RowStamper : MonoBehaviour
         for (int i = 0; i < scheduledRows.Count(); i++)
         {
             generationCount = 0;
-            float invokeAfterSeconds = i * spacing + delay;
+            float speedModifier = 1 / (wheel.speed / startingSpeed);
+            float invokeAfterSeconds = i * spacing * speedModifier + delay;
             Invoke("StampHierarchy", invokeAfterSeconds);
         }
     }

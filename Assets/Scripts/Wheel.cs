@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
     float fov;
     public float speed = 25f;
     private float savedSpeed;
-
+    public Guid currentButtonId;
     void Start()
     {
         fov = Camera.main.fieldOfView;
@@ -17,12 +18,9 @@ public class Wheel : MonoBehaviour
         transform.Rotate(Vector3.right * speed * Time.deltaTime);
     }
 
-    public void ChangeSpeed(float speed)
+    public void ChangeSpeed(Guid buttonId, float speed)
     {
-        // if (speed > this.speed)
-        // {
-        //     Camera.main.fieldOfView = 100;
-        // }
+        currentButtonId = buttonId;
 
         this.speed = speed;
     }
