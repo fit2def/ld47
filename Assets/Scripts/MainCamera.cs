@@ -10,6 +10,7 @@ public class MainCamera : MonoBehaviour
     GameObject instructions;
 
     UpdateLevelNumber levelText;
+    public Transform defaultCameraTransform;
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class MainCamera : MonoBehaviour
 
         if (!Levels.gameJustStarted)
         {
-            animator.Play("Init");
+            transform.localPosition = defaultCameraTransform.position;
+            transform.localRotation = defaultCameraTransform.rotation;
             levelText.gameObject.SetActive(true);
             instructions.SetActive(false);
         }
