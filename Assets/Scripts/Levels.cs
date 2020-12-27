@@ -16,7 +16,7 @@ public static class Levels
 
     public static Level[] levels = {
         new Level {
-        Name = "Brick Wall,\nhamster fall",
+        Name = "1",
         Rows = new ObstacleRow[] {
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
@@ -97,7 +97,7 @@ public static class Levels
         }
         },
         new Level {
-        Name = "Dilemma",
+        Name = "2",
         Rows = new ObstacleRow[] {
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
@@ -178,7 +178,7 @@ public static class Levels
         }
         },
         new Level {
-        Name = "Live fast,\n die young",
+        Name = "3",
         Rows = new ObstacleRow[] {
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
@@ -275,7 +275,7 @@ public static class Levels
 
         },
         new Level {
-        Name = "Lookin' 4 fun +\nfeelin' groovy",
+        Name = "4",
         Rows = new ObstacleRow[] {
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
@@ -407,7 +407,7 @@ public static class Levels
         }
         },
         new Level {
-        Name = "Fiery, but\n mostly peaceful",
+        Name = "5",
         Rows = new ObstacleRow[] {
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
@@ -491,7 +491,7 @@ public static class Levels
         },
         },
         new Level {
-        Name = "Tubular",
+        Name = "6",
         Rows = new ObstacleRow[] {
         ObstacleRow.PipeRow (true),
         ObstacleRow.PipeRow (true),
