@@ -335,6 +335,7 @@ public static class Levels
         ObstacleRow.Spacer (),
         ObstacleRow.Spacer (),
         ObstacleRow.Spacer (),
+        ObstacleRow.Spacer(),
         new ObstacleRow {
         Obstacles = new ObstacleCode[] {
         ObstacleCode.Nothing,
